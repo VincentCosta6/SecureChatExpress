@@ -1,4 +1,10 @@
 const authRouter = require("express").Router()
+
+const bcrypt = require("bcrypt")
+const pg = require("pg")
+
+const { createJWT } = require("../utility/jwt-auth")
+
 const authenticationMiddleware = require("../middleware/authentication")
 
 authRouter.post("/register", (req, res) => {
